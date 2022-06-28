@@ -19,29 +19,32 @@ h1 {
 
 #word-display-area {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
 }
 
-.row1,
-.row2,
-.row3,
-.row4,
-.row5,
-.row6 {
+.row {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 90%;
 }
 
-
-.cell {
+.cell1,
+.cell2,
+.cell3,
+.cell4,
+.cell5,
+.cell6 {
     width: 50px;
     height: 50px;
     border: solid;
     margin: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Quicksand", sans-serif;
 }
 
 #input-area {
@@ -49,4 +52,12 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#game-over {
+    display: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: "Quicksand", sans-serif;
 }

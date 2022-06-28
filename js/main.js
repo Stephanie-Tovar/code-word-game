@@ -1,7 +1,9 @@
 
 class Game {
     constructor() {
-        this.counter = 0;
+        this.attempts = 0;
+        this.userGuess = "";
+        this.guessesList = [];
     }
 
     getRandomWord() {
@@ -10,57 +12,81 @@ class Game {
         return this.randomWord;
     }
 
-    getUserInput() {
+    checkInputLength() {
         this.userGuess = document.getElementById('user-guess').value;
-        // this.guessArr = this.userGuess.split("");
 
-        for (let i = 0; i < this.userGuess.length; i++) {
-            let cell = document.querySelectorAll('.cell')[i].innerHTML = this.userGuess[i];
+        if (this.userGuess.length !== 5) {
+            window.alert("You will need a 5-letter word to play this game!");
+            return;
         }
 
+        this.guessesList.push(this.userGuess);
+        this.checkAttempts();
+        this.displayUserInput();
+        this.checkAnswer();
+    }
+
+    checkAttempts() {
+        if (this.randomWord === this.userGuess) {
+            this.attempts = 0;
+            console.log("Awesome! Your are good at this");
+        } else {
+            this.attempts++;
+        }
+
+        if (this.attempts === 6) {
+            document.querySelector('#game-over').style.display = 'block';
+            console.log("Game over! Maybe next time")
+        }
+    }
+
+    displayUserInput() {
+        let row = document.querySelectorAll('.row');
+        for (let i = 0; i < this.guessesList.length; i++) {
+            for (let j = 0; j < this.guessesList[i].length; j++) {
+                row[i].children[j].innerHTML = this.guessesList[i][j];
+            }
+        }
         return this.userGuess;
     }
 
     checkAnswer() {
         console.log(this.randomWord);
 
-        if (this.randomWord === this.userGuess) {
-            this.counter = 0;
-            console.log("Awesome! Your are good at this");
-        } else {
-            this.counter++;
-            console.log("Nope! Keep trying");
-        }
 
-        if (this.counter === 6) {
-            console.log("Game over! Maybe next time")
-        }
-        console.log(this.counter);
-        for (let i = 0; i < 5; i++) {
-            if (this.randomWord.includes(this.userGuess[i])) {
-                document.querySelectorAll('.cell')[i].style.background = "#F4C564";
-            } else {
-                document.querySelectorAll('.cell')[i].style.background = "#A09D96";
+        for (let i = 0; i < this.guessesList.length; i++) {
+            for (let j = 0; j < this.guessesList[i].length; j++) {
+                if (this.randomWord[j] === this.guessesList[i][j]) {
+                    document.querySelectorAll(`.cell${i + 1}`)[j].style.background = "#689B65";
+                } else if (this.randomWord.includes(this.guessesList[i][j])) {
+                    document.querySelectorAll(`.cell${i + 1}`)[j].style.background = "#F4C564";
+                } else {
+                    document.querySelectorAll(`.cell${i + 1}`)[j].style.background = "#A09D96";
+                }
             }
         }
     }
 
+
     submitButton() {
-        document.querySelector("#submit-button").addEventListener("click", (event) => {
+        document.querySelector('#submit-button').addEventListener('click', (event) => {
             event.preventDefault();
-            this.getUserInput();
-            this.checkAnswer();
+            this.checkInputLength();
+            document.getElementById('user-guess').value = "";
         })
     }
 
     resetButton() {
-        document.querySelector("#reset-button").addEventListener("click", (event) => {
-            event.preventDefault();
-            this.counter = 0;
+        document.querySelector('#reset-button').addEventListener('click', () => {
+            document.location.reload();
         })
     }
 
-
+    playAgainButton() {
+        document.querySelector('#play-again').addEventListener('click', () => {
+            document.location.reload();
+        })
+    }
 
 }
 
