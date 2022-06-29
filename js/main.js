@@ -35,7 +35,7 @@ class Game {
         }
 
         if (this.attempts === 6) {
-            document.querySelector('#game-over').style.display = 'block';
+            document.querySelector('#game-over').classList.add('show');
             console.log("Game over! Maybe next time")
         }
     }
@@ -84,6 +84,7 @@ class Game {
 
     playAgainButton() {
         document.querySelector('#play-again').addEventListener('click', () => {
+            document.querySelector('#game-over').classList.remove('show')
             document.location.reload();
         })
     }
