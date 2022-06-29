@@ -29,6 +29,7 @@ class Game {
     checkAttempts() {
         if (this.randomWord === this.userGuess) {
             this.attempts = 0;
+            document.querySelector('#win-msg').classList.add('show');
             console.log("Awesome! Your are good at this");
         } else {
             this.attempts++;
@@ -83,8 +84,9 @@ class Game {
     }
 
     playAgainButton() {
-        document.querySelector('#play-again').addEventListener('click', () => {
-            document.querySelector('#game-over').classList.remove('show')
+        document.querySelectorAll('.play-again').addEventListener('click', () => {
+            document.querySelector('#game-over').classList.remove('show');
+            document.querySelector('#win-msg').classList.remove('show');
             document.location.reload();
         })
     }

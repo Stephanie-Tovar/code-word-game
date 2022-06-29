@@ -55,7 +55,8 @@ h1 {
     align-items: center;
 }
 
-#game-over {
+#game-over,
+#win-msg {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,7 +71,8 @@ h1 {
     transition: opacity 1.2s ease;
 }
 
-#game-over.show {
+#game-over.show,
+#win-msg.show {
     pointer-events: auto;
     opacity: 1;
 }
@@ -95,7 +97,7 @@ h1 {
 }
 
 #submit-button,
-#play-again {
+.play-again {
     border: 0;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
