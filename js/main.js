@@ -82,11 +82,15 @@ class Game {
     }
 
     playAgainButton() {
-        document.querySelectorAll('.play-again').addEventListener('click', (event) => {
+        const playButtons = document.querySelectorAll('.play-again');
+        console.log(playButtons)
+
+        playButtons.forEach(element => element.addEventListener('click', () => {
             document.querySelector('#game-over').classList.remove('show');
             document.querySelector('#win-msg').classList.remove('show');
             document.location.reload();
         })
+        )
     }
 
     gotItButton() {
@@ -102,3 +106,5 @@ const game = new Game();
 game.getRandomWord();
 game.submitButton();
 game.resetButton();
+game.gotItButton();
+game.playAgainButton();
