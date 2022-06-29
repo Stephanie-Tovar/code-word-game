@@ -16,7 +16,7 @@ class Game {
         this.userGuess = document.getElementById('user-guess').value;
 
         if (this.userGuess.length !== 5) {
-            window.alert("You will need a 5-letter word to play this game!");
+            document.querySelector('#word-length').classList.add('show');
             return;
         }
 
@@ -30,14 +30,12 @@ class Game {
         if (this.randomWord === this.userGuess) {
             this.attempts = 0;
             document.querySelector('#win-msg').classList.add('show');
-            console.log("Awesome! Your are good at this");
         } else {
             this.attempts++;
         }
 
         if (this.attempts === 6) {
             document.querySelector('#game-over').classList.add('show');
-            console.log("Game over! Maybe next time")
         }
     }
 
@@ -84,10 +82,16 @@ class Game {
     }
 
     playAgainButton() {
-        document.querySelectorAll('.play-again').addEventListener('click', () => {
+        document.querySelectorAll('.play-again').addEventListener('click', (event) => {
             document.querySelector('#game-over').classList.remove('show');
             document.querySelector('#win-msg').classList.remove('show');
             document.location.reload();
+        })
+    }
+
+    gotItButton() {
+        document.querySelector('#got-it-btn').addEventListener('click', () => {
+            document.querySelector('#word-length').classList.remove('show');
         })
     }
 
