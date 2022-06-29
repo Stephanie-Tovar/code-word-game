@@ -13,7 +13,7 @@ class Game {
         return this.randomWord;
     }
 
-    checkInputLength() {
+    checkInput() {
         this.userGuess = document.getElementById('user-guess').value.toLowerCase();
 
         if (this.userGuess.length !== 5 || this.specialChars.test(this.userGuess)) {
@@ -69,7 +69,7 @@ class Game {
     submitButton() {
         document.querySelector('#submit-button').addEventListener('click', (event) => {
             event.preventDefault();
-            this.checkInputLength();
+            this.checkInput();
             document.getElementById('user-guess').value = "";
         })
     }
@@ -97,10 +97,20 @@ class Game {
         })
     }
 
+    start() {
+        document.getElementById('start-btn').addEventListener('click', () => {
+            // document.getElementById('rules').style.pointerEvents = none;
+            document.querySelector('main').removeChild(document.getElementById('rules'))
+
+        })
+    }
 }
 
 
+
+
 const game = new Game();
+game.start();
 game.getRandomWord();
 game.submitButton();
 game.resetButton();

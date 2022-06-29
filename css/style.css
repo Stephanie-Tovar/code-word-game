@@ -13,7 +13,7 @@ h1 {
     font-family: "Quicksand", sans-serif;
 }
 
-#instructions {
+#rules {
     text-align: center;
     font-family: "Quicksand", sans-serif;
 }
@@ -55,6 +55,21 @@ h1 {
     align-items: center;
 }
 
+#rules {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    opacity: 1;
+    /* pointer-events: none; */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: opacity 1.5s ease;
+}
+
 #game-over,
 #win-msg,
 #word-length {
@@ -84,7 +99,7 @@ h1 {
     max-width: 100%;
     border-radius: 5px;
     text-align: center;
-    padding: 30px 50px;
+    padding: 50px 50px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     font-family: "Quicksand", sans-serif;
@@ -98,6 +113,7 @@ h1 {
     opacity: 0.7;
 }
 
+#start-btn,
 #submit-button,
 #got-it-btn,
 .play-again {

@@ -15,14 +15,17 @@
         <h1>Code Word</h1>
     </header>
     <main>
-        <section id="instructions">
-            <p>Type in your guess</p>
-            <p>You have up to 6 attempts to find the word</p>
-            <p>If the background color turns yellow,<br>
-                the code word has that letter!</p>
-            <p>If the background color turns green, <br>
-                the correct letter is at the right spot!</p>
-            <p>Good luck!</p>
+        <section id="rules">
+            <div class="modal">
+                <h2>Code Word Game</h2>
+                <p>Let's check your English vocabulary</p>
+                <p>All you need to do is find the 5-letter Code Word</p>
+                <p>Yellow cases: the Code Word has the letter</p>
+                <p>Green cases: the letter is at the right place</p>
+                <p>You have up to 6 attempts</p>
+                <p>Good luck!</p>
+                <button id="start-btn">Start</button>
+            </div>
         </section>
         <section id="word-display-area">
             <div class="row">
@@ -79,7 +82,7 @@
             <div class="modal">
                 <h3>Oops!</h3>
                 <p>You will need a 5-letter word to play this game</p>
-                <button id="got-it-btn">Got it!</button>
+                <button id="got-it-btn">Got it</button>
             </div>
         </section>
         <section id="win-msg">
