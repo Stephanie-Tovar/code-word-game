@@ -4,6 +4,7 @@ class Game {
         this.attempts = 0;
         this.userGuess = "";
         this.guessesList = [];
+        this.specialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
     }
 
     getRandomWord() {
@@ -13,9 +14,9 @@ class Game {
     }
 
     checkInputLength() {
-        this.userGuess = document.getElementById('user-guess').value;
+        this.userGuess = document.getElementById('user-guess').value.toLowerCase();
 
-        if (this.userGuess.length !== 5) {
+        if (this.userGuess.length !== 5 || this.specialChars.test(this.userGuess)) {
             document.querySelector('#word-length').classList.add('show');
             return;
         }
@@ -52,7 +53,6 @@ class Game {
     checkAnswer() {
         console.log(this.randomWord);
 
-
         for (let i = 0; i < this.guessesList.length; i++) {
             for (let j = 0; j < this.guessesList[i].length; j++) {
                 if (this.randomWord[j] === this.guessesList[i][j]) {
@@ -65,7 +65,6 @@ class Game {
             }
         }
     }
-
 
     submitButton() {
         document.querySelector('#submit-button').addEventListener('click', (event) => {
@@ -83,7 +82,6 @@ class Game {
 
     playAgainButton() {
         const playButtons = document.querySelectorAll('.play-again');
-        console.log(playButtons)
 
         playButtons.forEach(element => element.addEventListener('click', () => {
             document.querySelector('#game-over').classList.remove('show');
