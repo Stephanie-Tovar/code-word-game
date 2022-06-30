@@ -16,14 +16,24 @@
     </header>
     <main>
         <section id="rules">
-            <div class="modal">
+            <div class="modal-rules">
                 <h2>Code Word Game</h2>
                 <p>This is a guess game</p>
-                <p>You need to find the 5-letter Code Word</p>
+                <p>You need to find the 5-letter "Code Word"</p>
                 <p>After each guess, you will receive some hints</p>
                 <ul>
-                    <li>Yellow cases: the Code Word has the letter</li>
-                    <li>Green cases: the letter is at the right place</li>
+                    <div class="color-case">
+                        <img src="./img/yellow_case.png" alt="yellow case">
+                        <li>Correct letter, wrong spot</li>
+                    </div>
+                    <div class="color-case">
+                        <img src="./img/green_case.png" alt="green case">
+                        <li>Correct letter, correct spot</li>
+                    </div>
+                    <div class="color-case">
+                        <img src="./img/grey_case.png" alt="grey case">
+                        <li>Wrong letter</li>
+                    </div>
                 </ul>
                 <p>You have up to 6 attempts</p>
                 <p>Good luck!</p>
@@ -85,6 +95,7 @@
             <div class="modal">
                 <h3>Oops!</h3>
                 <p>You will need a 5-letter word to play this game</p>
+                <p>No special characters allowed!</p>
                 <button id="got-it-btn">Got it</button>
             </div>
         </section>
