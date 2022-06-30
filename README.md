@@ -6,7 +6,7 @@
 - A correct letter in the correct place is indicated with a green background. 
 - A correct letter in the wrong place is indicated with a yellow background.
 - An incorrect letter is indicated with a grey backgroud.
-- Use the colors to guess the 5-letter word.
+- Use the colors as hints to guess the 5-letter word.
 - After 6 tries, game is over.
 
 # Demo
