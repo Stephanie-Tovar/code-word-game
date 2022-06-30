@@ -77,7 +77,7 @@ class Game {
     resetButton() {
         document.querySelector('#reset-button').addEventListener('click', () => {
             document.location.reload();
-            document.querySelector('.modal-rules').style.opacity = 0;
+            document.querySelector('main').removeChild(document.getElementById('rules'));
         })
     }
 

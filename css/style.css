@@ -56,6 +56,11 @@ body {
     display: block;
 }
 
+#user-guess:focus {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    outline-color: #282929;
+}
+
 #rules,
 #game-over,
 #win-msg,
@@ -69,7 +74,7 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.3);
-    transition: opacity 1.2s ease;
+    transition: opacity 1.5s ease;
 }
 
 #rules {
@@ -77,32 +82,6 @@ body {
     text-align: center;
 }
 
-ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0;
-    width: auto;
-}
-
-li {
-    display: inline;
-    vertical-align: middle;
-}
-
-img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-
-.color-case {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
 
 #game-over,
 #win-msg,
@@ -150,23 +129,60 @@ img {
     opacity: 0.7;
 }
 
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    width: auto;
+}
+
+li {
+    display: inline;
+    vertical-align: middle;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.color-case {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
 #start-btn,
 #submit-button,
 #got-it-btn,
 .play-again {
     border: 0;
-    border-radius: 5px;
+    border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     color: #ffffff;
     background-color: #34A0A4;
     font-size: 16px;
     padding: 10px 25px;
     margin-top: 10px;
+    letter-spacing: 0.4px;
+}
+
+#start-btn:hover,
+#submit-button:hover,
+#got-it-btn:hover,
+.play-again:hover {
+    background-color: #50b4b7;
 }
 
 #reset-button {
     border: 0;
-    border-radius: 5px;
+    border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     color: #ffffff;
     background-color: #3e4543;
@@ -174,9 +190,14 @@ img {
     padding: 10px 25px;
     margin-top: 10px;
     margin-left: 10px;
+    letter-spacing: 0.4px;
 }
 
 #input-buttons {
     display: flex;
     justify-content: center;
+}
+
+#reset-button:hover {
+    background-color: #545c5a;
 }
