@@ -1,6 +1,13 @@
 # Description
-OOP game built with web technologies (html, css, javascript)
+"Code Word" is a guess game. Players have six attempts to guess a five-letter word, with feedback given for each guess in the form of colored tiles indicating when letters match or occupy the correct position.
+
 # How to play
-Move player with arrow keys :)
+- Type in a valid five-letter word.
+- A correct letter in the correct place is indicated with a green background. 
+- A correct letter in the wrong place is indicated with a yellow background.
+- An incorrect letter is indicated with a grey backgroud.
+- Use the colors to guess the 5-letter word.
+- After 6 tries, game is over.
+
 # Demo
-https://gabriel-vcs.github.io/querty-game/index.html
+https://stephanie-tovar.github.io/code-word-game/
