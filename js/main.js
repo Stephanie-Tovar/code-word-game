@@ -77,6 +77,7 @@ class Game {
     resetButton() {
         document.querySelector('#reset-button').addEventListener('click', () => {
             document.location.reload();
+            document.querySelector('.modal-rules').style.opacity = 0;
         })
     }
 
@@ -98,10 +99,8 @@ class Game {
     }
 
     start() {
-        document.getElementById('start-btn').addEventListener('click', () => {
-            // document.getElementById('rules').style.pointerEvents = none;
-            document.querySelector('main').removeChild(document.getElementById('rules'))
-
+        document.querySelector('#start-btn').addEventListener('click', () => {
+            document.querySelector('main').removeChild(document.getElementById('rules'));
         })
     }
 }

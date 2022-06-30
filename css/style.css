@@ -47,11 +47,13 @@ body {
 }
 
 #user-guess {
+    width: 250px;
     font-size: 16px;
-    padding: 10px 25px;
-    border: 0;
-    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: block;
 }
 
 #rules,
@@ -170,4 +172,11 @@ img {
     background-color: #3e4543;
     font-size: 16px;
     padding: 10px 25px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#input-buttons {
+    display: flex;
+    justify-content: center;
 }
