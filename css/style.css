@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari&family=Roboto&display=swap');
+
 body {
     display: flex;
     flex-direction: column;
@@ -7,7 +9,7 @@ body {
     width: 100vw;
     margin: 0;
     background-color: rgb(238, 238, 238);
-    font-family: "Quicksand", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 #word-display-area {
@@ -40,26 +42,72 @@ body {
 }
 
 #input-area {
-    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px 0 0;
+    margin-top: 30px;
 }
 
 #user-guess {
+    font-family: inherit;
     width: 250px;
-    font-size: 16px;
-    padding: 10px;
     border: none;
-    border-radius: 3px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 17px;
+    color: rgb(35, 34, 34);
+    padding: 10px;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+        color: transparent;
+    }
+
+    &:placeholder-shown~.form-label {
+        font-size: 17px;
+        cursor: text;
+        top: 20px;
+    }
+}
+
+.form-label {
+    position: absolute;
+    top: 0;
     display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
 }
 
 #user-guess:focus {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    outline-color: #282929;
+    ~.form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: rgb(35, 34, 34);
+        font-weight: 700;
+    }
+
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #28787a, #3e4543);
+    border-image-slice: 1;
 }
+
+
+#user-guess {
+
+    &:required,
+    &:invalid {
+        box-shadow: none;
+    }
+}
+
 
 #rules,
 #game-over,
@@ -129,7 +177,6 @@ body {
     opacity: 0.7;
 }
 
-
 ul {
     display: flex;
     flex-direction: column;
@@ -157,7 +204,6 @@ img {
     margin-bottom: 10px;
 }
 
-
 #start-btn,
 #submit-button,
 #got-it-btn,
@@ -166,7 +212,7 @@ img {
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     color: #ffffff;
-    background-color: #34A0A4;
+    background-color: #2c8d90;
     font-size: 16px;
     padding: 10px 25px;
     margin-top: 10px;
@@ -177,7 +223,7 @@ img {
 #submit-button:hover,
 #got-it-btn:hover,
 .play-again:hover {
-    background-color: #50b4b7;
+    background-color: #46a6aa;
 }
 
 #reset-button {

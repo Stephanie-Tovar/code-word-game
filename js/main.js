@@ -8,7 +8,7 @@ class Game {
     }
 
     getRandomWord() {
-        this.wordsArr = ["about", "above", "adapt", "aisle", "brisk", "blush", "bluff", "bolts", "cable", "champ", "chalk", "clams", "comet", "crack", "cycle", "dance", "darts", "denim", "dryer", "duvet", "earth", "eased", "event", "exact", "equal", "fable", "fever", "fiber", "flaw", "gecko", "goofy", "hairy", "image", "itchy", "issue", "japan", "jewel", "juice", "laces", "lynch", "mafia", "movie"];
+        this.wordsArr = ["about", "above", "abuse", "adapt", "adult", "agent", "anger", "aisle", "apple", "award", "basis", "beach", "birth", "block", "blood", "board", "brain", "bread", "break", "brisk", "brown", "blush", "bluff", "bolts", "buyer", "cause", "chain", "chair", "chest", "chief", "child", "cable", "champ", "chalk", "clams", "claim", "class", "comet", "clock", "coach", "court", "crack", "cycle", "dance", "darts", "denim", "dryer", "duvet", "earth", "eased", "event", "exact", "equal", "fable", "fever", "fiber", "flaw", "gecko", "goofy", "hairy", "image", "itchy", "issue", "japan", "jewel", "juice", "laces", "lunch", "level", "light", "month", "mafia", "movie", "mouth", "money", "music", "match", "metal", "night", "noise", "north", "novel", "nurse", "offer", "order", "owner", "panel", "paper", "party", "peace", "phase", "phone", "pilot", "place", "plane", "plant", "plate", "point", "pound", "power", "press", "price", "pride", "prize", "proof", "queen", "radio", "range", "ratio", "reply", "right", "river", "round", "route", "rugby", "scale", "scene", "scope", "score", "shape", "share", "sheep", "shift", "shirt", "shock", "sight", "skill", "sleep", "smile", "smoke", "sound", "south", "space", "speed", "sport", "squad", "staff", "stage", "start", "state", "steel", "stock", "stone", "store", "study", "stuff", "style", "sugar", "table", "taste", "theme", "thing", "title", "total", "touch", "tower", "track", "trade", "train", "trend", "trial", "trust", "truth", "uncle", "union", "value", "video", "visit", "voice", "waste", "watch", "water", "while", "white", "woman", "world", "youth"];
         this.randomWord = this.wordsArr[Math.floor(Math.random() * this.wordsArr.length + 1) - 1];
         return this.randomWord;
     }
@@ -51,8 +51,6 @@ class Game {
     }
 
     checkAnswer() {
-        console.log(this.randomWord);
-
         for (let i = 0; i < this.guessesList.length; i++) {
             for (let j = 0; j < this.guessesList[i].length; j++) {
                 if (this.randomWord[j] === this.guessesList[i][j]) {
@@ -104,8 +102,6 @@ class Game {
         })
     }
 }
-
-
 
 
 const game = new Game();
